@@ -11,23 +11,30 @@ type Reel = {
 const REELS: Reel[] = [
   {
     n: "01",
-    title: "Brand Reel",
+    title: "the ace band",
     category: "Showreel",
     youtubeId: "A9MJlO5LRtA",
     vertical: true,
   },
   {
     n: "02",
-    title: "Timeline Edit",
+    title: "frontline band",
     category: "Client",
     youtubeId: "eRULKhgX0Ak",
     vertical: false,
   },
   {
     n: "03",
-    title: "Cinematic Edit",
+    title: "Abanga Repost",
     category: "Commercial",
     youtubeId: "5J27Kc2g1O4",
+    vertical: false,
+  },
+  {
+    n: "04",
+    title: "dandeli",
+    category: "Creative",
+    youtubeId: "k8nea5nR08s",
     vertical: false,
   },
 ];
@@ -52,7 +59,7 @@ export function VideosSection() {
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 lg:gap-8 items-start">
 
-          {/* LEFT - Vertical Reel */}
+          {/* LEFT SIDE - Vertical Video */}
           <FadeIn delay={0.1}>
             <div className="overflow-hidden border-2 border-[#D7E2EA]/30 bg-black rounded-[28px] md:rounded-[36px]">
 
@@ -95,10 +102,10 @@ export function VideosSection() {
             </div>
           </FadeIn>
 
-          {/* RIGHT SIDE VIDEOS */}
+          {/* RIGHT SIDE - Horizontal Videos */}
           <div className="flex flex-col gap-6 lg:gap-8">
 
-            {[REELS[1], REELS[2]].map((r, i) => (
+            {REELS.slice(1).map((r, i) => (
               <FadeIn key={r.n} delay={(i + 1) * 0.1}>
 
                 <div className="overflow-hidden border-2 border-[#D7E2EA]/30 bg-black rounded-[28px] md:rounded-[36px]">
